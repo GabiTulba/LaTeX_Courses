@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, nccmath}
+\usepackage{mathabx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{upquote}
+
+\newcommand{\A}{\mathbb A}
+\newcommand{\B}{\mathbb B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Npos}{\mathbb{N}^{*}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{Mate 2: Curs \#0 Solutii Exercitii}
+\author{Tulba-Lecu Gabriel si Preoteasa Mircea}
+\date{24 Septembrie 2019}
+
+\usepackage{xparse}
+%
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\begin{document}
+    \maketitle
+
+    \section{Exercitiul 1}
+        \subsection{Enunt}
+            Sa se determine clasele de echivalenta pe $\Z$. Notam $x \rho y \iff\ n | x-y,\\ \ n \in \Npos,\ n \neq 1$.
+        \subsection{Rezolvare}
+            Notam $\hat{x} = \set{y; y \in \Z, y \equiv x (mod\ n)}$\\
+            Atunci multimea claselor de echivalenta este $Z_n = \set{\hat{x};x \in \Z}$
+    \section{Exercitiul 2}
+        \subsection{Enunt}
+            Sa se arate ca daca $\rho$ este o relatie de echivalenta pe $\A$ si $x,y \in \A\ atunci\ \hat{x} = \hat{y}\ sau\ \hat{x} \cap \hat{y} = \emptyset$.
+        \subsection{Rezolvare}
+            Presupunem ca $\hat{x} \cap \hat{y} \neq \emptyset\ si\ \hat{x} \neq \hat{y}$. Atunci $\exists z \in \A \ a.i.\ z \in \hat{x}\ si\ z \in \hat{y}$, deci $x \rho z\ si\ y \rho z$.\\ 
+            $\rho$ este o relatie de echivalenta pe $\A$, deci $\rho$ este reflexiva, tranzitiva si simetrica.\\
+            Din faptul ca $\rho$ este simetrica $y \rho z \implies z \rho y$.\\
+            Din faptul ca $\rho$ este tranzitiva $x \rho z\ si\ z \rho y \implies x \rho y$.\\
+            Din $x \rho y$ rezulta ca $y \in \hat{x}$, iar din simetrie avem $y \rho x$, din care rezulta ca $x \in \hat{y}$, deci $\hat{x} = \hat{y}$, dar $\hat{x} \neq \hat{y}$, contradictie.\\
+            In concluzie, $\hat{x} \cap \hat{y} \neq \emptyset \implies \hat{x} = \hat{y}$, deci $\hat{x} \cap \hat{y} = \emptyset\ sau\ \hat{x}=\hat{y}$.
+    \section{Exercitiul 3}
+        \subsection{Enunt}
+            Sa se arate ca pentru o relatie $\rho$ intre $\A\ si\ \B$, intre \\ $\A \rho \B \iff \exists\ f:\A \rightarrow \B\ bijectie$ este o relatie de echivalenta.\\
+        \subsection{Rezolvare}
+\end{document}

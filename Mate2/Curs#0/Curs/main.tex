@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, nccmath}
+\usepackage{mathabx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{upquote}
+
+\newcommand{\A}{\mathbb A}
+\newcommand{\B}{\mathbb B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Npos}{\mathbb{N}^{*}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{Mate 2: Curs \#0}
+\author{Profesor: Iulian Duca}
+\date{24 Septembrie 2019}
+
+\usepackage{xparse}
+%
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\begin{document}
+
+\maketitle
+
+\section{Detalii curs}
+    \subsection{Obtinere nota}
+        Nota finala se obtine dintr-un test final, ce are o pondere de 50\%, unul partial cu pondere de 30\%, ce va fi dat dupa primele 10 ore de curs, si pe activitatea la seminarii ce completeaza restul de 20\% din nota finala.
+    \subsection{Structura materiei}
+        \subsubsection{Algebra liniara}
+            \begin{itemize}
+                \item Spatii vectoriale
+                \item Produse scalare 
+                \item Aplicatii liniare 
+                \item Aplicatii biliniare
+            \end{itemize}
+        \subsubsection{Ecuatii diferentiale}
+            \begin{itemize}
+                \item Sisteme de ecuatii liniare 
+                \item Ecuatii diferentiale liniare 
+                \item Ecuatii diferentiale cu derivate partiale 
+            \end{itemize}
+\newpage
+\section{Curs \#0}
+    Se numeste \textbf{produs cartezian} intre $\A$ si $\B$: $\A \bigtimes \B = \set{(a, b); a \in \A, b \in \B}$. \\
+    $\rho$ se numeste o \textbf{relatie binara} intre $\A$ si $\B$ daca $\rho \subseteq \A \bigtimes \B$. \\ \\
+    \textbf{Notatie}: $(a, b) \in \rho \iff a \rho b$\\
+    Daca $\A = \B$ se spune ca $\rho$ este o \textbf{relatie pe \A}.\\ \\
+    Fie $\rho$ o relatie binara pe $\A$. \\
+    \textbf{Proprietati}:
+    \begin{itemize}
+        \item $\rho$ este \textbf{reflexiva} daca $\forall x \in \A, x \rho x$
+        \item $\rho$ este \textbf{simetrica} daca din $x \rho y$ rezulta $y \rho y$
+        \item $\rho$ este \textbf{tranzitiva} daca din $x \rho y$ si $y \rho z$ rezulta $x \rho z$
+        \item $\rho$ este \textbf{antisimetrica} daca din $x \rho y$ si $y \rho x$ rezulta $x=y$
+    \end{itemize}
+    \textbf{Definitie}: O relatie $\rho$ pe $\A$ care este reflexiva, simetrica si tranzitiva se numeste \textbf{relatie de echivalenta}.\\
+    \textbf{Exemplu}: Fie $n \in \Npos, n \neq 1$. Pe \Z\ definim $x \rho y \iff n | x-y$.\\ \\
+    \textbf{Definitie}: Daca $\rho$ este o relatie pe A si este reflexiva, antisimetrica si tranzitiva, atunci $\rho$ se numeste \textbf{relatie de ordine}.\\
+    \textbf{Exemplu}: $\A=\N$ si $x \rho y \iff x | y$.\\ \\
+    \textbf{Definitie}: o relatie $\rho$ este peste tot definita pe $\A$ daca $\forall x,y \in \A,\ x\rho y\ sau\ y \rho x$. \\
+    O relatie de ordine pe $\A$ care este peste tot definita se numeste \textbf{relatie de ordine totala}. \\ \\
+    \textbf{Definitie}: Fie $\rho$ o relatie intre $\A$ si $\B$, multimea $\set{x \in \A; \exists y \in \B\ a.i.\ x \rho y}$ se numeste \textbf{domeniu strict de definitie al lui $\rho$}, iar multimea $\set{y \in \B; \exists x \in \A\ a.i.\ x \rho y}$ se numeste \textbf{imaginea lui $\rho$}. \\
+    Daca $\rho$ este definita intre $\A$ si $\B$ si domeniul de definitie al lui $\rho$ este $\A$ rezulta ca $\rho$ este peste tot definita. \\
+    Daca din $x \rho y_1$ si $x \rho y_2$ rezulta $y_1 = y_2$ se spune ca $\rho$ este de \textbf{tip functionala} intre $\A$ si $\B$.\\
+    O relatie $\rho$ de tip functionala intre $\A$ si $\B$, care este peste tot definita, se numeste \textbf{functie definita pe A cu valori in B}.\\
+    \textbf{Notatie}: $x \rho y \iff \rho(x) = y$.\\ \\
+    O relatie poate fi exprimata cu ajutorul unui \textbf{tablou}. In cazul in care elementele lui $\A$ si $\B$ sunt in numar finit, se pot pune elementele $a_1,\ a_2,\ a_3,\ ...\ a_n \in \A$ pe liniile tabloului, iar elementele $b_1,\ b_2,\ b_3,\ ...\ b_n \in \B$ pe coloanele tabelului si pe pozitia (i,j) se pune $1\ daca\ a_i \rho b_j\ sau\ 0\ daca\ a_i \cancel{\rho} b_i$.\\ \\
+    Fie $\rho$ o relatie de echivalenta pe $\A$, pentru $x \in \A$ notam $\hat{x} = \set{y \in \A; y \rho x} \subseteq \A$ \textbf{clasa de echivalenta a lui $x$}.\\ \\
+    \textbf{Exercitiu}: Sa se determine clasele de echivalenta pe $\Z$ (din exemplul anterior) prin $x \rho y \iff n | x-y,\ n \in \Npos, n \neq 1$. \\
+    \textbf{Exercitiu}: Daca $\rho$ este o relatie de echivalenta pe $\A$ si $x,y \in \A\ atunci\ \hat{x} = \hat{y}\ sau\ \hat{x} \cap \hat{y} = \emptyset$. \\ \\
+    $\A\ /\ \rho = \set{\hat{x}; x \in \A}$ se numeste \textbf{partitie a lui $\A$}.\\ \\
+    \textbf{Exercitiu}: Sa se arate ca pentru o relatie $\rho$ intre $\A\ si\ \B$, intre \\ $\A \rho \B \iff \exists\ f:\A \rightarrow \B\ bijectie$ este o relatie de echivalenta.\\
+    $\A$ este cardinal echivalent cu $\B$.
+    
+
+\end{document}
