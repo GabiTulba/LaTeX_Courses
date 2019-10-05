@@ -15,6 +15,7 @@
 \usepackage{hyperref}
 \usepackage{xparse}
 \usetikzlibrary{through}
+\usepackage{epigraph}
 
 \usepackage{tikz}
 \usetikzlibrary{angles,quotes}
@@ -41,6 +42,7 @@
 \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 \begin{document}
+	\epigraph{``Inteligenta artificiala nu va egala niciodata prostia naturala."}{--- \textup{Duca Iulian}}
     
     \maketitle
     \section{Matrici}
@@ -119,5 +121,29 @@
             0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\
         \end{pmatrix} = (I_{n} | A^{-1})$ \\
         Se verifica usor ca matricea obtinuta este intradevar $A^{-1}$, intrucat respecta relatia $A \cdot A^{-1}=I_{3}$.
+        \section{Spatii vectoriale}
+        Fie $(V, +)$ un grup abelian si $(K, +, \cdot)$ un corp.Spunem ca V are structura de spatiu vectorial peste corpul K $\iff$
+        	\begin{enumerate}
+        		\item $\lambda(v + u)= \lambda v + \lambda u\ \forall \lambda, u \in K, v \in V$
+        		\item $(\lambda + u)v = \lambda  v + uv\ \forall \lambda, u \in K, v \in V$
+        		\item $ \lambda u \left(v\right) = \lambda \left(uv\right)$
+        		\item $1 \cdot v = v, \forall \ v \in V$
+        	\end{enumerate}
+        Elementele din $V$ se numesc vectori iar elementele din $K$ se numesc scalari.\\
+        Exemple de spatii vectoriale:
+        \begin{itemize}
+        	\item $V = \mathbb{R}^{n}, K = \mathbb{R}, n \in \mathbb{N}$
+        	\item $V = \mathbb{C}, K = \mathbb{R}$
+        	\item $V = M_{n,m}(\mathbb{R}), K = \mathbb{R}$
+        	\item $V = V_{3}, K = \mathbb{R}$
+        	\item $V = \mathbb{R}[X], K = \mathbb{R}$
+        \end{itemize}
+        Fie scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$ si vectorii $v_{1}, v_{2}, \dots v_{n}$. Atunci expresia $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$ se numeste combinatie liniara a vectorilor $v_{1}, v_{2}, \dots v_{n}$, cu scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. \\ \\
+        Definitie: Fie $V$ un spatiu vectorial peste $K$. Vectorii $\set{ v_{1}, v_2, \dots, v_{n}}$ formeaza sistem de generatori pentru $V$ $\iff \forall\ v \in V\ \exists\ \alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$ a.i. $v = \alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$. \\ \\
+        Definitie: Vectorii $v_{1}, v_{2}, \dots v_{n}$ din spatiul vectorial $V$ peste $K$ formeaza un sistem liniar independent peste $K$ daca din orice relatie $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n} = 0 \implies \alpha_{1} = \alpha_{2} = \dots = 0$. Altfel spus, un sistem de generatori nu poate fi scris ca o combinatie liniara decat decat daca toti scalarii acesteia sunt nuli. \\ \\
+        Definitie: Un spatiu vectorial care admite un sistem de generatori cu numar finit de vectori se numeste spatiu vectorial finit generat. \\ \\
+        Definitie: O multime de vectori care formeaza un sitem de generatori liniar independenti se numeste baza. \\ \\
+        Proprietate: Din orice sistem de generatori se poate extrage o baza.\\
+        Demonstratie: Vectorii din sistemul de generatori care se pot scrie ca fiind o combinatie liniara a celorlalti vectori se pot exclude din sistemul de generatori. Procedeul poate sa fie continuat pana in momentul in care nici unul dintre vectori nu mai poate fi scris ca o combinatie liniara a celorlalti.
 \end{document}
 
