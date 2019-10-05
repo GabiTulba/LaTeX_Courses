@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, nccmath}
+\usepackage{mathabx}
+\usepackage{mathrsfs}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{upquote}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\usepackage{hyperref}
+\usepackage{xparse}
+\usetikzlibrary{through}
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes}
+
+\newcommand{\handC}{\mathscr{C}}
+
+\title{Mate 1: Curs \#1}
+\author{Profesor: Iulian Duca}
+\date{30 Septembrie 2019}
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+    \array{#1}}
+\makeatother
+
+\newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+
+\begin{document}
+    
+    \maketitle
+    \section{Matrici}
+        Fie $A = \set{1,2,3,...,n}$ si $B = \set{1,2,3,...,m}, m,n \in \mathbb{N}^*$.\\
+        Se numeste matrice cu $n$ linii si $m$ coloane, orice aplicatie $f : A\times B \rightarrow I$, unde $(I,+,\cdot)$ inel.\\
+        Vom nota $f(i,j) = C_{ij},\ C = (C_{ij}), 1\leq i\leq n,\ 1\leq j\leq m$.\\
+        Consideram matricea extinsa: 
+        \begin{pmatrix}[cccc|c]
+            x_{11} & x_{12} & \dots & x_{1n} & b_1 \\
+            x_{21} & x_{22} & \dots & x_{2n} & b_2 \\
+            \vdots & \vdots & \ddots & \vdots & \vdots \\
+            x_{m1} & x_{m2} & \dots & x_{mn} & b_m \\
+        \end{pmatrix}\\
+        a sistemului $A \cdot X = B,\ X = 
+        \begin{pmatrix}
+            x_1\\
+            x_2\\
+            \vdots\\
+            x_n\\
+        \end{pmatrix},\ 
+        B = \begin{pmatrix}
+            b_1\\
+            b_2\\
+            \vdots\\
+            b_n\\
+        \end{pmatrix},\ A \in M_n(\mathbb{R})$\\
+        Se observa ca daca se inverseaza doua linii pe matricea extinsa, se obtine o matrice extinsa a unui sistem echivalent cu cel initial.\\
+        Daca se inmulteste o linie cu un numar nenul si se adauga la alta linie, rezulta un sistem echivalent cu cel original.\\
+        Daca folosim cele 2 operatii enuntate anterior $\implies (A|B) \mytilde \dots \mytilde (I_n|B^*)$\\ \\
+        Observatie:\\
+        Daca avem un sistem $(A|C1)$ si un alt sistem $(A|C2)$, se pot rezolva simultan cele 2 sisteme cu metoda Gauss-Jordan:\\
+        $(A|C1|C2)\mytilde \dots \mytilde (I_n|C_1^*|C_2^*)$\\
+        $(A|C1) \mytilde \dots \mytilde (I_n|C_1^*) \iff C_1^* = A^{-1} \cdot C_1$
+        Daca rezolva simultan $n$ sisteme de ecuatii de forma $\begin{pmatrix} 1\\0\\ \vdots\\ 0 \end{pmatrix}, \begin{pmatrix} 0\\1\\ \vdots\\ 0 \end{pmatrix}
+            \dots \begin{pmatrix} 0\\0\\ \vdots\\ 1 \end{pmatrix}$\\
+                $\begin{pmatrix}[c|c|c|c|c] A&\begin{pmatrix} 1\\0\\ \vdots\\ 0 \end{pmatrix}& \begin{pmatrix} 0\\1\\ \vdots\\ 0 \end{pmatrix}& \dots &
+                    \begin{pmatrix}0\\0\\ \vdots\\ 1\end{pmatrix}\end{pmatrix} \iff (A|I_n) \mytilde \dots \mytilde (I_n|A^{-1})$
+        Pentru determinarea matricelor echivalente cu matricea initiala se poate proceda astfel:\\
+        \begin{enumerate}
+            \item Daca $a_{11}\neq 0$ se imparte linia 1 la $a_{11}$
+        \end{enumerate}
+\end{document}
+

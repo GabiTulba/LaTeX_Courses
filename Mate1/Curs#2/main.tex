@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, nccmath}
+\usepackage{mathabx}
+\usepackage{mathrsfs}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{upquote}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\usepackage{hyperref}
+\usepackage{xparse}
+\usetikzlibrary{through}
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes}
+
+\newcommand{\handC}{\mathscr{C}}
+
+\title{Mate 1: Curs \#1}
+\author{Profesor: Radu Gologan}
+\date{1 Octombrie 2019}
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+\begin{document}
+    
+    \maketitle
+\end{document}
+

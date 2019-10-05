@@ -69,7 +69,8 @@
             \item Relatia de egalitate
             \item Relatia de echivalenta a figurilor geometrice
             \item Fie $n \in \mathbb{N}^*$, introducem pe $\mathbb{Z}$ relatia:\\ $m,p \in \mathbb{Z},\ m\equiv p (mod\ n) \iff n | (m-p)$\\
-            Pentru $i = \overline{0,n-1}$, definim \textbf{clasa de resturi a lui $i$}: $\hat{i} = \set{i+n\cdot k; k \in \mathbb{Z}}$ si \textbf{multimea claselor de resturi modulo $n$}: $\mathbb{Z}_n = \set{\hat{0},\hat{1},...,\hat{n-1}}$
+            Pentru $i = \overline{0,n-1}$, definim \textbf{clasa de resturi a lui $i$}: $\hat{i} = \set{i+n\cdot k; k \in \mathbb{Z}}$ si \textbf{multimea
+                claselor de resturi modulo $n$}: $\mathbb{Z}_n = \set{\hat{0},\hat{1},...,\widehat{n-1}}$
         \end{itemize}
         In general, pentru $(X,R)$ o relatie de echivalenta, vom nota:\\ $\forall x \in X, \hat{x} = \set{y;yRx}\implies X = \displaystyle{\bigcup_{x\in X}}\hat{x}\ si\ x \cancel{R}y \implies \hat{x} \cap \hat{y} = \emptyset$\\
         vom nota \textbf{multimea claselor de echivalenta} sau \textbf{spatiul cat} $\set{\hat{x}}_{x\in X} = X/_R$.\\ 
@@ -107,7 +108,7 @@
                       \draw (5,-1.125) node[anchor=east] {$M$};
                   \end{tikzpicture}
             \end{center}
-            Aceasta din constructie rezulta ca $\Delta/_\rho =\ suprafata\ laterala\ a\ unui\ cilindru$
+            Se observa din constructie ca $\Delta/_\rho =\ suprafata\ laterala\ a\ unui\ cilindru$
         
             \item Fie $\Delta = \set{(x,y); x,y \in [0,1]}$ suprafata unui patrat si $\rho$ o relatie de echivalenta astfel incat:\\
             Daca $M=(x_1,y_1)\ cu\ x_1\in (0,1)\ si\ y_1 \in [0,1]\ si\ N=(x_2,y_2)\ cu\ x_2\in (0,1)\ si\ y_2 \in [0,1]\implies M\rho N \iff M = N$\\
@@ -130,7 +131,7 @@
                   \end{tikzpicture}
                   \includegraphics[width=4cm, height=3cm]{MobiusStrip.png}
             \end{center}
-            Aceasta din constructie rezulta ca $\Delta/_\rho =\ suprafata\ definita\ de\ o\ banda\ Mobius$
+            Se observa din constructie ca $\Delta/_\rho =\ suprafata\ definita\ de\ o\ banda\ Mobius$
             
             \item Fie $\Delta = \set{(x,y); x,y \in [0,1]}$ suprafata unui patrat si $\rho$ o relatie de echivalenta astfel incat:\\
             Daca $M=(x_1,y_1)\ cu\ x_1\in (0,1)\ si\ y_1 \in (0,1)\ si\ N=(x_2,y_2)\ cu\ x_2\in (0,1)\ si\ y_2 \in (0,1)\implies M\rho N \iff M = N$\\
@@ -159,7 +160,7 @@
                   \end{tikzpicture}
                   \includegraphics[width=3cm, height=4cm]{KleinBottle.png}
             \end{center}
-            Aceasta din constructie rezulta ca $\Delta/_\rho =\ suprafata\ definita\ de\ o\ sticla\ Klein$
+            Se observa din constructie ca $\Delta/_\rho =\ suprafata\ definita\ de\ o\ sticla\ Klein$
         
         \end{itemize}
         
@@ -167,20 +168,28 @@
         $(X,R)$ o relatie pe $X$ se numeste \textbf{relatie de ordine} daca si numai daca are urmatoarele proprietati:
         \begin{itemize}
             \item Reflexivitate
-            \item \textbf{Antisimetrie:} $xRy\ si yRx \implies x=y$
+            \item \textbf{Antisimetrie:} $xRy\ si\ yRx \implies x=y$
             \item Tranzitivitate
         \end{itemize}
         O relatie de ordine se numeste \textbf{relatie de ordine totala} daca:\\ $\forall x,y \in X, xRy\ sau\ yRx$ \\
-        O relatie de ordine se numeste \textbf{relatie de ordine partiala} daca nu este o relatie de ordine totala\\
+        O relatie de ordine se numeste \textbf{relatie de ordine partiala} daca nu este o relatie de ordine totala\\ \\
         Exemple:
         \begin{itemize}
-            \item Notam $\mathscr{P}(X) = \set{A;A\subseteq X}, |X| = n \implies |\mathscr{P}(X) = 2^n|$ \textbf{multimea tuturor submultimilor lui X}\\
+            \item Notam $\mathscr{P}(X) = \set{A;A\subseteq X}, |X| = n \implies |\mathscr{P}(X)| = 2^n$ \textbf{multimea tuturor submultimilor lui X}\\
             $ARB \iff A \subseteq B$ este o relatie de ordine partiala.
         \end{itemize}
         De obicei, relatiile de ordine se noteaza $xRy \iff x \leq y$\\ \\
-        Daca $(X,\leq)$ este o relatie de ordine si $M \subseteq X$, numim $m\in X$ \textbf{majorant pentru M} atunci cand $x \leq m,\ \forall x \in M$ si $n \in x$ \textbf{minorant pentru M} atunci cand $n \leq x,\ \forall x \in M$\\
-        Definim $sup_M$ ca fiind cel mai mic majorant, daca acesta exista, si $inf_M$ ca fiind cel mai mare minorant, daca acesta exista.\\
+        Daca $(X,\leq)$ este o relatie de ordine si $A \subseteq X$, numim $M\in X$ \textbf{majorant pentru A} atunci cand $x \leq M,\ \forall x \in A$ si $m\in
+        X$ \textbf{minorant pentru A} atunci cand $m \leq x,\ \forall x \in A$\\
+        Definim $sup_A$ ca fiind cel mai mic majorant al multimii $A$, daca acesta exista, si $inf_A$ ca fiind cel mai mare minorant al multimii $A$, daca acesta exista.\\
         Explicitam:\\
-        $sup_M = S \in X \iff$
-\end{document}            Aceasta din constructie rezulta ca $\Delta/_\rho =\ suprafata\ definita\ de\ o\ sticla\ Klein$
+        $sup_A = S \in X \iff x \leq S\ \forall x \in A\ si\ daca\ \forall S' \in X\ a.i.\ x \leq S' \implies S \leq S'$. Analog se defineste si $inf_A$.\\
+        In $\mathbb{R},\ A \subseteq \mathbb{R},\ sup_A = S \in \mathbb{R} \iff a \leq S, \forall a \in A\ si\ \forall \epsilon > 0, \exists a \in A\ a.i.\
+        S-\epsilon \leq a$.\\ \\
+        Exercitiu:\\
+        Fie $(a_n)_n,\ (b_n)_n$ doua siruri marginite in $\mathbb{R}$. Vom demonstra ca $sup(a_n+b_n) \leq sup(a_n) + sub(b_n)$.\\ \\
+        Demonstratie:\\
+        $a_i \leq sup(a_n),\forall i\ si\ b_i \leq sup(b_n),\forall i \implies a_i+b_i \leq sup(a_n) + sup(b_n),\forall i \implies sup(a_n+b_n) \leq sup(a_n) +
+        sup(b_n)$
+\end{document}
 
