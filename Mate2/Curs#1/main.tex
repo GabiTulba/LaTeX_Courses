@@ -47,9 +47,9 @@
     \maketitle
     \section{Matrici}
         Fie $A = \set{1,2,3,...,n}$ si $B = \set{1,2,3,...,m}, m,n \in \mathbb{N}^*$.\\
-        Se numeste matrice cu $n$ linii si $m$ coloane, orice aplicatie $f : A\times B \rightarrow I$, unde $(I,+,\cdot)$ inel.\\
+        Se numeste \textbf{matrice} cu $n$ linii si $m$ coloane, orice aplicatie $f : A\times B \rightarrow I$, unde $(I,+,\cdot)$ inel.\\
         Vom nota $f(i,j) = C_{ij},\ C = (C_{ij}), 1\leq i\leq n,\ 1\leq j\leq m$.\\
-        Consideram matricea extinsa: 
+        Consideram \textbf{matricea extinsa}: 
         \begin{pmatrix}[cccc|c]
             x_{11} & x_{12} & \dots & x_{1n} & b_1 \\
             x_{21} & x_{22} & \dots & x_{2n} & b_2 \\
@@ -69,11 +69,14 @@
             \vdots\\
             b_n\\
         \end{pmatrix},\ A \in M_n(\mathbb{R})$\\
-        Se observa ca daca se inverseaza doua linii pe matricea extinsa, se obtine o matrice extinsa a unui sistem echivalent cu cel initial.\\
-        Daca se inmulteste o linie cu un numar nenul si se adauga la alta linie, rezulta un sistem echivalent cu cel original.\\
+        Se observa ca:
+        \begin{enumerate}
+            \item Daca se inverseaza doua linii pe matricea extinsa, se obtine o matrice extinsa a unui sistem echivalent cu cel initial.\\
+            \item Daca se inmulteste o linie cu un numar nenul si se adauga la alta linie, rezulta un sistem echivalent cu cel initial.\\
+        \end{enumerate}
         Daca folosim cele 2 operatii enuntate anterior $\implies (A|B) \mytilde \dots \mytilde (I_n|B^*)$\\ \\
         Observatie:\\
-        Daca avem un sistem $(A|C1)$ si un alt sistem $(A|C2)$, se pot rezolva simultan cele 2 sisteme cu metoda Gauss-Jordan:\\
+        Daca avem un sistem $(A|C1)$ si un alt sistem $(A|C2)$, se pot rezolva simultan cele 2 sisteme cu \textbf{metoda Gauss-Jordan}:\\
         $(A|C1|C2)\mytilde \dots \mytilde (I_n|C_1^*|C_2^*)$\\
         $(A|C1) \mytilde \dots \mytilde (I_n|C_1^*) \iff C_1^* = A^{-1} \cdot C_1$
         Daca rezolva simultan $n$ sisteme de ecuatii de forma $\begin{pmatrix} 1\\0\\ \vdots\\ 0 \end{pmatrix}, \begin{pmatrix} 0\\1\\ \vdots\\ 0 \end{pmatrix}
@@ -82,7 +85,9 @@
                     \begin{pmatrix}0\\0\\ \vdots\\ 1\end{pmatrix}\end{pmatrix} \iff (A|I_n) \mytilde \dots \mytilde (I_n|A^{-1})$ \\ \\
         Pentru determinarea matricelor echivalente cu matricea initiala se poate proceda astfel:
         \begin{enumerate}
-            \item Daca $A_{11}\neq 0$ se imparte linia 1 la $A_{11}$ obtinand pe aceasta pozitie 1. Daca se inmulteste linia 1 cu $-A_{21}$ si se aduna la linia 2 se obtine pe linia $A_{21} = 0$. Se procedeaza analog pana cand sub elementul $A_{11}$ sunt numai valori $0$. Ceea ce s-a facut cu $A_{11}$ se face si cu elementele $A_{22}, A_{33}, \dots ,A_{nn}$, obtinandu-se astefel pe diagonala principala numai valori $1$ si sub aceasta numai valori $0$.
+            \item Daca $A_{11}\neq 0$ se imparte linia 1 la $A_{11}$ obtinand pe aceasta pozitie 1. Daca se inmulteste linia 1 cu $-A_{21}$ si se aduna la linia
+                2 se obtine pe linia $A_{21} = 0$. Se procedeaza analog cu celelalte linii pana cand sub elementul $A_{11}$ raman numai valori $0$. Ceea ce s-a
+                facut pentru $A_{11}$ se face si pentru elementele $A_{22}, A_{33}, \dots ,A_{nn}$, obtinandu-se astefel pe diagonala principala numai valori $1$ si sub aceasta numai valori $0$.
             \item Absolut analog cu pasul $1$, incepand cu coloana $n$ se obtin valori egale cu $0$ deasupra diagonalei principale.
         \end{enumerate}
         De remarcat este faptul ca in toate operatiunile descrise mai sus participa si elementele din coloana termenilor liberi. \\
@@ -122,28 +127,34 @@
         \end{pmatrix} = (I_{n} | A^{-1})$ \\
         Se verifica usor ca matricea obtinuta este intradevar $A^{-1}$, intrucat respecta relatia $A \cdot A^{-1}=I_{3}$.
         \section{Spatii vectoriale}
-        Fie $(V, +)$ un grup abelian si $(K, +, \cdot)$ un corp. Spunem ca V are structura de spatiu vectorial peste corpul K $\iff$
+            Fie $(V, +)$ un \textbf{grup abelian} si $(K, +, \cdot)$ un \textbf{corp}. Spunem ca \textbf{V are structura de spatiu vectorial peste corpul K}
+            daca $V$ si $K$ sunt inzestrate cu \textbf{legea externa} $\cdot:K\times V\rightarrow V$ ce indeplineste urmatoarele proprietati:
         	\begin{enumerate}
-        		\item $\lambda(v + u)= \lambda v + \lambda u\ \forall \lambda, u \in K, v \in V$
-        		\item $(\lambda + u)v = \lambda  v + uv\ \forall \lambda, u \in K, v \in V$
-        		\item $ \lambda u \left(v\right) = \lambda \left(uv\right)$
-        		\item $1 \cdot v = v, \forall \ v \in V$
+                \item \textbf{distributivitatea inmultirii cu un scalar fata de adunarea vectoriala}: $\lambda(v + u)= \lambda v + \lambda u\ \forall \lambda \in K, v,u \in V$
+                \item \textbf{distributivitatea inmultirii cu un scalar in raport cu legea aditiva al corpului}: $(\lambda + \mu)v = \lambda  v + \mu v\ \forall
+                    \lambda, \mu \in K, v \in V$
+                \item \textbf{compatibiliatea inmultirii cu un scalar cu inmultirea corpului}: $\lambda (\mu v) = (\lambda \mu)v\ \forall \lambda,\mu \in K,
+                    \forall v\in V$
+        		\item \textbf{elementul neutru al inmultirii cu un scalar}: $1 \cdot v = v, \forall \ v \in V$, unde 1 reprezinta elementul neutru al inmultirii
+                    din K
         	\end{enumerate}
-        Elementele din $V$ se numesc vectori iar elementele din $K$ se numesc scalari.\\
+        Elementele din $V$ se numesc \textbf{vectori} iar elementele din $K$ se numesc \textbf{scalari}.\\
         Exemple de spatii vectoriale:
         \begin{itemize}
-        	\item $V = \mathbb{R}^{n}, K = \mathbb{R}, n \in \mathbb{N}$
+        	\item $V = \mathbb{R}^{n}, K = \mathbb{R}, n \in \mathbb{N}^*$
         	\item $V = \mathbb{C}, K = \mathbb{R}$
         	\item $V = M_{n,m}(\mathbb{R}), K = \mathbb{R}$
-        	\item $V = V_{3}, K = \mathbb{R}$
+            \item $V = \mathscr{V}_{3}, K = \mathbb{R}$
         	\item $V = \mathbb{R}[X], K = \mathbb{R}$
         \end{itemize}
-        Fie scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$ si vectorii $v_{1}, v_{2}, \dots v_{n}$. Atunci expresia $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$ se numeste combinatie liniara a vectorilor $v_{1}, v_{2}, \dots v_{n}$, cu scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. \\ \\
-        Definitie: Fie $V$ un spatiu vectorial peste $K$. Vectorii $\set{ v_{1}, v_2, \dots, v_{n}}$ formeaza sistem de generatori pentru $V$ $\iff \forall\ v \in V\ \exists\ \alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$ a.i. $v = \alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$. \\ \\
-        Definitie: Vectorii $v_{1}, v_{2}, \dots v_{n}$ din spatiul vectorial $V$ peste $K$ formeaza un sistem liniar independent peste $K$ daca din orice relatie $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n} = 0 \implies \alpha_{1} = \alpha_{2} = \dots = 0$. Altfel spus, un sistem de generatori nu poate fi scris ca o combinatie liniara decat decat daca toti scalarii acesteia sunt nuli. \\ \\
-        Definitie: Un spatiu vectorial care admite un sistem de generatori cu numar finit de vectori se numeste spatiu vectorial finit generat. \\ \\
-        Definitie: O multime de vectori care formeaza un sitem de generatori liniar independenti se numeste baza. \\ \\
-        Proprietate: Din orice sistem de generatori se poate extrage o baza.\\
+        Fie scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$ si vectorii $v_{1}, v_{2}, \dots v_{n}$. Atunci expresia $\alpha_{1} \cdot v_{1} + \dots +
+        \alpha_{n} \cdot v_{n}$ se numeste \textbf{combinatie liniara} a vectorilor $v_{1}, v_{2}, \dots v_{n}$, cu scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. \\ \\
+        Definitie: Fie $V$ un spatiu vectorial peste $K$. Vectorii $\set{ v_{1}, v_2, \dots, v_{n}}$ formeaza \textbf{sistem de generatori} pentru $V$ $\iff
+        \forall\ v \in V\ \exists\ \alpha_{1}, \alpha_{2}, \dots , \alpha_{n}\in K$ a.i. $v = \alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$. \\ \\
+        Definitie: Vectorii $v_{1}, v_{2}, \dots v_{n}$ din spatiul vectorial $V$ peste $K$ formeaza un \textbf{sistem liniar independent} peste $K$ daca din orice relatie $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n} = 0 \implies \alpha_{1} = \alpha_{2} = \dots = 0$. Altfel spus, un sistem de generatori nu poate fi scris ca o combinatie liniara decat decat daca toti scalarii acesteia sunt nuli. \\ \\
+        Definitie: Un spatiu vectorial care admite un sistem de generatori cu numar finit de vectori se numeste \textbf{spatiu vectorial finit generat}. \\ \\
+        Definitie: O multime de vectori care formeaza un sitem de generatori liniar independenti se numeste \textbf{baza}. \\ \\
+        Proprietate: Din orice sistem de generatori finit se poate extrage o baza.\\
         Demonstratie: Vectorii din sistemul de generatori care se pot scrie ca fiind o combinatie liniara a celorlalti vectori se pot exclude din sistemul de generatori. Procedeul poate sa fie continuat pana in momentul in care nici unul dintre vectori nu mai poate fi scris ca o combinatie liniara a celorlalti.
 \end{document}
 
