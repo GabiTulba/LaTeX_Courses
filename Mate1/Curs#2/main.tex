@@ -20,10 +20,10 @@
 \usetikzlibrary{angles,quotes}
 
 \newcommand{\handC}{\mathscr{C}}
-
-\title{Mate 1: Curs \#1}
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}%
+\title{Mate 1: Curs \#2}
 \author{Profesor: Radu Gologan}
-\date{1 Octombrie 2019}
+\date{3 Octombrie 2019}
 
 \DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
 \NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
@@ -34,5 +34,50 @@
 \begin{document}
     
     \maketitle
+    \section{Latice}
+        Definitie: $(X,\leq)$ se numeste \textbf{latice completa} daca $\forall A \subseteq X\implies \exists sub_A,inf_A\in X$
+        $f:X\rightarrow X$ este o functie monotona crescatoare(descrescatoare) daca $x\leq y \implies f(x)\leq(\geq)f(y)$\\
+        Exemplu:\\
+        Fie $M$ o multime, atunci $\mathscr{P}(M)$ este o latice completa relativ la relatia de incluziune $\subseteq$, cu $sup_{A_i} =
+        \displaystyle{\bigcup_{i}} A_i$ si $inf_{A_i}=\displaystyle{\bigcap_{i}}A_i,\ A_i\in \mathscr{P}(M)$\\
+        Teorema (Tarski):\\
+        Fie $(X,\leq)$ o latice completa si $f:X\rightarrow X$ o functie monotona. Atunci $f$ admite un punct fix: $\exists u \in X\ a.i.\ f(u)=u$\\
+        Demonstratie:\\
+        Fie $A\subseteq X\ a.i\ A=\set{x\in X;x\leq f(x)}\ si\ u = sup_A$.\\ 
+        Din faptul ca $x\in A \implies x\leq f(x)$, dar $f$ este monotona $\implies f(x)\leq f(f(x)) \implies f(x) \in A\ \forall x\in
+        A$ \hfill (1)\\
+        $\forall x\in A,\ x\leq u$ si f monotona $\implies f(x) \leq f(u)\implies x\leq f(x)\leq f(u)\implies\ f(u)$ majorant pentru $A$, dar $u=sup_A\implies u
+        \leq f(u)$ \hfill (2)\\
+        Din faptul ca $u\leq f(u) \implies u\in A$, dar din (1) rezulta ca $f(u)\in A\ si\ u=sup_A \implies f(u)\leq u$ \hfill (3)\\
+        Din (2) si (3) $\implies f(u)=u$ \hfill \QEDA\\ \\
+        Consecinta a teoremei Tarski - Teorema lui Bernstein:\\
+        Fie $A,B$ doua multimi, astfel incat $\exists f:A\rightarrow B,\ g:B\rightarrow A$ doua functii injective. Atunci exista o functie $h:A\rightarrow B$
+        bijectiva.\\
+        Demonstratie:
+        O LASAM LA SFARSIT CA E CEVA DE SCRIS LA EA\\ \\
+        
+    \section{Numarabilitate}
+        Definitie:\\
+        Fie $A,B$ doua multimi, supunem ca $A$ si $B$ sunt \textbf{echivalente} $\iff \exists f:A\rightarrow B$ o functie bijectiva.\\
+        Definitie:\\
+        O multime $A$ echivalenta cu $\mathbb{N}$ se numeste \textbf{numarabila}.\\
+        Notam $card(A)$ \textbf{cardinalul} lui $A$ = clasa de echivalenta a lui A fata de relatia de echivalenta cu \mathbb{N}.\\
+        Notam $card(\mathbb{N})=\aleph_0$\\
+        Altfel spus, $A$ este numarabila $\iff \exists (a_n)_{n\geq0}\ a.i.\ \forall x\in A\ \exists i\in \mathbb{N}\ a.i.\ a_i = x$\\ \\
+        Propozitie: daca $A$ si $B$ sunt numarabile $\implies A\times B$ este numarabila.\\
+        Demonstratie:\\
+        Este suficient sa demonstram ca $\mathbb{N} \times \mathbb{N}$ este numarabila, intrucat daca $A$ si $B$ sunt echivalente cu $\mathbb{N} \implies
+        A\times B$ este echivalenta cu $\mathbb{N} \times \mathbb{N}$.\\
+        $\mathbb{N} \times \mathbb{N} = \set{(n,m);n,m\in\mathbb{N}}$\\
+        Fie $f:\mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N},\ f((i,j)) = \frac{(i+j)\cdot(i+j-1)}{2}+i$.\\ Vom demonstra ca $f$ este bijectiva.\\
+        Se observa ca daca $a+b=k\implies f((a,b))\in [\frac{k(k-1)}{2},\frac{k(k+1)}{2})$ si oricare doua astfel de intervale sunt disjuncte $\implies f((a,b))=f((c,d)) \iff a+b=c+d$\\
+        Daca $a+b=c+d\ si\ f((a,b))=f((c,d)) \implies \frac{(a+b)\cdot(a+b-1)}{2}+a = \frac{(c+d)\cdot(c+d-1)}{2}+c \iff a=c$, dar $a+b=c+d \implies b=d
+        \implies f$ este injectiva. \hfill (1)\\\\
+        Fie $x \in \mathbb{N} \implies \exists k\in \mathbb{N}\ a.i.\ x\in [\frac{k(k-1)}{2},\frac{k(k+1)}{2})$. Notam $y=x-\frac{k(k-1)}{2} \implies f((y,k-y))=
+        x \implies \forall x \in \mathbb{N}\ \exists (y,k-y) \in \mathbb{N} \times \mathbb{N}\ a.i.\ f((y,k-y))=x \implies f$ este surjectiva \hfill (2)\\
+        Din (1) si (2) $\implies f$ este bijectiva $\implies \mathbb{N} \times \mathbb{N}$ este numarabila \hfill \QEDA\\ \\
+        Fie $\mathbb{Q}_+=\set{\frac{p}{q};p,q\in\mathbb{N}}$ si $g:\mathbb{N} \times \mathbb{N} \rightarrow \mathbb{Q}_+,\ g((a,b))=\frac{a}{b}$ o functie
+        evident bijectiva $\implies \mathbb{Q}_+$ este echivalenta cu $\mathbb{N} \times \mathbb{N} \implies \mathbb{Q}_+$ este numarabila. Analog se demonsteaza ca
+        $\mathbb{Q}_- =\set{-\frac{p}{q};p,q\in\mathbb{N}}$ este numarabila $\implies \mathbb{Q}$ este numarabila.
 \end{document}
 
