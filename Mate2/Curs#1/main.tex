@@ -76,9 +76,9 @@
         \end{enumerate}
         Daca folosim cele 2 operatii enuntate anterior $\implies (A|B) \mytilde \dots \mytilde (I_n|B^*)$\\ \\
         Observatie:\\
-        Daca avem un sistem $(A|C1)$ si un alt sistem $(A|C2)$, se pot rezolva simultan cele 2 sisteme cu \textbf{metoda Gauss-Jordan}:\\
-        $(A|C1|C2)\mytilde \dots \mytilde (I_n|C_1^*|C_2^*)$\\
-        $(A|C1) \mytilde \dots \mytilde (I_n|C_1^*) \iff C_1^* = A^{-1} \cdot C_1$
+        Daca avem un sistem $(A|C_1)$ si un alt sistem $(A|C_2)$, se pot rezolva simultan cele 2 sisteme cu \textbf{metoda Gauss-Jordan}:\\
+        $(A|C_1|C_2)\mytilde \dots \mytilde (I_n|C_1^*|C_2^*)$\\
+        $(A|C_1) \mytilde \dots \mytilde (I_n|C_1^*) \iff C_1^* = A^{-1} \cdot C_1$\\
         Daca rezolva simultan $n$ sisteme de ecuatii de forma $\begin{pmatrix} 1\\0\\ \vdots\\ 0 \end{pmatrix}, \begin{pmatrix} 0\\1\\ \vdots\\ 0 \end{pmatrix}
             \dots \begin{pmatrix} 0\\0\\ \vdots\\ 1 \end{pmatrix}$\\
                 $\begin{pmatrix}[c|c|c|c|c] A&\begin{pmatrix} 1\\0\\ \vdots\\ 0 \end{pmatrix}& \begin{pmatrix} 0\\1\\ \vdots\\ 0 \end{pmatrix}& \dots &
@@ -87,7 +87,7 @@
         \begin{enumerate}
             \item Daca $A_{11}\neq 0$ se imparte linia 1 la $A_{11}$ obtinand pe aceasta pozitie 1. Daca se inmulteste linia 1 cu $-A_{21}$ si se aduna la linia
                 2 se obtine pe linia $A_{21} = 0$. Se procedeaza analog cu celelalte linii pana cand sub elementul $A_{11}$ raman numai valori $0$. Ceea ce s-a
-                facut pentru $A_{11}$ se face si pentru elementele $A_{22}, A_{33}, \dots ,A_{nn}$, obtinandu-se astefel pe diagonala principala numai valori $1$ si sub aceasta numai valori $0$.
+                facut pentru $A_{11}$ se face si pentru elementele $A_{22}, A_{33}, \dots ,A_{nn}$, obtinandu-se astfel pe diagonala principala numai valori $1$ si sub aceasta numai valori $0$.
             \item Absolut analog cu pasul $1$, incepand cu coloana $n$ se obtin valori egale cu $0$ deasupra diagonalei principale.
         \end{enumerate}
         De remarcat este faptul ca in toate operatiunile descrise mai sus participa si elementele din coloana termenilor liberi. \\
@@ -95,19 +95,15 @@
 		$\begin{pmatrix}[ccc|ccc]
             0 & 1 & 1 & 1 & 0 & 0 \\
             1 & 0 & 1 & 0 & 1 & 0 \\
-            1 & 1 & 0 & 0 & 1 & 0 \\
+            1 & 1 & 0 & 0 & 0 & 1 \\
         \end{pmatrix} \mytilde \begin{pmatrix}[ccc|ccc]
             1 & 0 & 1 & 0 & 1 & 0 \\
             0 & 1 & 1 & 1 & 0 & 0 \\
-            1 & 1 & 0 & 0 & 0 & 0 \\
-        \end{pmatrix} \mytilde \begin{pmatrix}[ccc|ccc]
-            0 & 1 & 1 & 1 & 0 & 0 \\
-            1 & 0 & 1 & 0 & 1 & 0 \\
-            1 & 1 & 0 & 0 & 1 & 0 \\
+            1 & 1 & 0 & 0 & 0 & 1 \\
         \end{pmatrix} \mytilde \begin{pmatrix}[ccc|ccc]
             1 & 0 & 1 & 0 & 1 & 0 \\
             0 & 1 & 1 & 1 & 0 & 0 \\
-            0 & 1 & -1 & 0 & 1 & 1 \\
+            0 & 1 & -1 & 0 & -1 & 1 \\
         \end{pmatrix} \mytilde \\ \\ \\ \mytilde \begin{pmatrix}[ccc|ccc]
             1 & 0 & 1 & 0 & 1 & 0 \\
             0 & 1 & 1 & 1 & 0 & 0 \\
@@ -120,7 +116,7 @@
             1 & 0 & 1 & 0 & 1 & 0 \\
             0 & 1 & 0 & \frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\
             0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\
-        \end{pmatrix} \mytilde \\ \\ \\ \mytilde \begin{pmatrix}[ccc|ccc]
+        \end{pmatrix}\mytilde \\ \\ \\ \mytilde \begin{pmatrix}[ccc|ccc]
             1 & 0 & 0 & -\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
             0 & 1 & 0 & \frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\
             0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\
@@ -151,7 +147,9 @@
         \alpha_{n} \cdot v_{n}$ se numeste \textbf{combinatie liniara} a vectorilor $v_{1}, v_{2}, \dots v_{n}$, cu scalarii $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}$. \\ \\
         Definitie: Fie $V$ un spatiu vectorial peste $K$. Vectorii $\set{ v_{1}, v_2, \dots, v_{n}}$ formeaza \textbf{sistem de generatori} pentru $V$ $\iff
         \forall\ v \in V\ \exists\ \alpha_{1}, \alpha_{2}, \dots , \alpha_{n}\in K$ a.i. $v = \alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n}$. \\ \\
-        Definitie: Vectorii $v_{1}, v_{2}, \dots v_{n}$ din spatiul vectorial $V$ peste $K$ formeaza un \textbf{sistem liniar independent} peste $K$ daca din orice relatie $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n} = 0 \implies \alpha_{1} = \alpha_{2} = \dots = 0$. Altfel spus, un sistem de generatori nu poate fi scris ca o combinatie liniara decat decat daca toti scalarii acesteia sunt nuli. \\ \\
+        Definitie: Vectorii $v_{1}, v_{2}, \dots v_{n}$ din spatiul vectorial $V$ peste $K$ formeaza un \textbf{sistem liniar independent} peste $K$ daca din
+        orice relatie $\alpha_{1} \cdot v_{1} + \dots + \alpha_{n} \cdot v_{n} = 0 \implies \alpha_{1} = \alpha_{2} = \dots = 0$. Altfel spus, un sistem de
+        generatori nu poate fi scris ca o combinatie liniara decat daca toti scalarii acesteia sunt nuli. \\ \\
         Definitie: Un spatiu vectorial care admite un sistem de generatori cu numar finit de vectori se numeste \textbf{spatiu vectorial finit generat}. \\ \\
         Definitie: O multime de vectori care formeaza un sitem de generatori liniar independenti se numeste \textbf{baza}. \\ \\
         Proprietate: Din orice sistem de generatori finit se poate extrage o baza.\\
