@@ -53,9 +53,19 @@
         Consecinta a teoremei Tarski - Teorema lui Bernstein:\\
         Fie $A,B$ doua multimi, astfel incat $\exists f:A\rightarrow B,\ g:B\rightarrow A$ doua functii injective. Atunci exista o functie $h:A\rightarrow B$
         bijectiva.\\
-        Demonstratie:
-        O LASAM LA SFARSIT CA E CEVA DE SCRIS LA EA\\ \\
-        
+        Demonstratie:\\
+        Fie $\phi:\mathscr{P}(A)\rightarrow \mathscr{P}(A)$ o functie. $\phi$ este o functie crescatoare(descrescatoare) daca $\phi$ are urmatoarea proprietate
+        $\forall U,V\in \mathscr{P}(A)\ a.i.\ U\subseteq V \implies \\  \phi(U) \subseteq (\supseteq) \phi(V)$ \hfill (4)\\
+        Fie $A$ o multime si $\phi:\mathscr{P}(A)\rightarrow \mathscr{P}(A),\ \phi(X) = A\setminus X$ o functie. Pentru $U,V \in \mathscr{P}(A), U \subseteq V
+        \implies \phi(U) \supseteq \phi(V),\ din\ (1) \implies \phi$ este
+        descrescatoare.(5)\\ 
+        Pentru $f:A\rightarrow B$, vom nota pentru $X\in \mathscr{P}(A), f(X) = \set{f(x);x\in X}$.\\ \\
+        Fie $f:A\rightarrow B$ si $g:B\rightarrow A$ doua funictii injective.\\ Fie $S:\mathscr{P}(A) \rightarrow \mathscr{P}(A),\ S(X) = g(B\setminus f(A\setminus
+        X))$. Din (4) si (5) rezulta ca $S$ este crescatoare. Deoarece $S$ este monotona, din teorema lui Tarski rezulta ca $\exists C\in \mathscr{P}(A)\ a.i.\
+        S(C)=C \implies \forall x,\ x \in C \iff x \in g(B\setminus f(A\setminus C)$ \hfill (6).\\ \\
+        Fie $R = \set{(x,y)\in A\times B; x\ \cancel{\in}\ C\ si\ y=f(x),\ sau\ x\in C\ si\ x=g(y)}$ o functie definita pe A, cu valori in B, vom arata ca R este o functie bijectiva.\\
+        Fie $y \in B$. Daca $y \in f(A\setminus C) \implies \exists x \in A\setminus C\ a.i.\ f(x) = y$. Daca $y\ \cancel{\in}\ f(A\setminus C) \implies y\in
+        B\setminus f(A\setminus C) \implies \exists x =g(y) \in C$. Rezulta ca $R$ este surjectiva \hfill (7)\\
     \section{Numarabilitate}
         Definitie:\\
         Fie $A,B$ doua multimi, supunem ca $A$ si $B$ sunt \textbf{echivalente} $\iff \exists f:A\rightarrow B$ o functie bijectiva.\\
